@@ -1,5 +1,15 @@
 # GU Source Action
 
+> **STATUS (2026-06-27): construction sandbox.** This repo was spun up to *construct* GU's missing RS/IG
+> source action. It has not yet built one. The work done here (CONSTRUCT-01..07) turned out to be AUDIT of
+> GU's generation sector, not construction, so those results have been **migrated back to
+> `../gu-formalization`** (`canon/no-go-quaternionic-parity-generation-sector.md`,
+> `tests/generation-sector/`, and the WHERE-GU-STANDS capstone). What remains here is the genuine,
+> still-open construction frontier: a **canonical external membrane** (the source action S_IG) that pins
+> the under-determined generation count a-priori, without import. Everything in this repo below is
+> forward-looking construction scaffolding (the cryptoeconomic membrane lens, the persona vote, the loss
+> channels), not audited results. See `DERIVATION-PROGRESS.md` for the full CONSTRUCT-01..07 record.
+
 ## Front-Door Candidate Lens
 
 The most actionable current design lens is:
