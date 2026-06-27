@@ -147,3 +147,34 @@ The decisive go/no-go from the 7-lens synthesis (the single crux five lenses con
 **HARD BAR UNCHANGED.** Reviving the index does NOT produce a generation count: ch2(S_X)[K3] = -5376 (not 24) still stands, and the spectral flow is in the auxiliary strength t, not yet a geometric parameter (so eta is a Kramers-even / 4Z spectral-flow quantity, not yet a free integer). GO means the remaining index question is well-posed and the wall is soft - NOT "three generations."
 
 **NEXT:** (1) replace the auxiliary t by the actual a-priori Y14 boundary connection (SPEC 5(ii)) and ask whether the geometry selects a breaker in the flowing class or the M_D-symmetric (eta=0) one - this is now the single decisive object. (2) Characterize the revived invariant properly (Kramers-even spectral flow / mod-2 vs free integer) before any count is read - feeds Tier-1 move 2 (degree-0 ratio-sector integer-freeness). (3) The hard bar -5376 is the independent second gate and is untouched by this result.
+
+---
+
+### CONSTRUCT-03 - the revived index is a CANONICAL integer eta_inf = sig(Delta), but CONNECTION-dependent (2026-06-27)
+
+Follow-through on CONSTRUCT-02's GO: how strong is it - canonical net index or path-dependent fuzz? Computed on the bridge (`tests/step8_grading_flow_character.py`), guards held. **Adversarially verified** (workflow, agent ran an independent t->2000 counter-computation); the first draft mis-stated the mechanism and was corrected.
+
+- **First-order null:** sig(P_ker Delta P_ker) = 0 for the natural AND every generic admissible breaker. D_Sigma's 1536-dim kernel splits SYMMETRICALLY to first order, so eta does not flow at small t; the flow is a finite-t level-crossing.
+- **CANONICAL LIMIT (the corrected, stronger result):** eta(D + t*Delta) has a clean, numerically-stable t->infinity limit equal to **sig(Delta)** - the signature of the grading-breaking connection itself - flat from t ~ 50 (verified t = 50, 200, 1000; adversary confirmed flat to t = 2000, 11/11 breakers). The multi-crossing seen at MODERATE t is only a transient, NOT the obstruction to canonicity (the first draft wrongly called the limit "numerically delicate / limit-less"; the counter-computation refuted that).
+- **Non-canonicity is PATH-DEPENDENCE, not fuzz:** sig(Delta) ranges over {0, +/-4, +/-8} across the admissible class (Kramers-even). The revived index is canonical PER CONNECTION but its VALUE is set entirely by WHICH grading-breaking connection is chosen - a datum the rep leaves free.
+- **Protected exception:** the natural breaker (M_D's own G-diagonal) has sig(Delta) = 0 and keeps eta = 0 for all t (the measure-zero protected case). Flow is generic (8/8 transient over [0,6]; adversary 10/10 over [0,8]; no positive-measure non-flowing admissible set found).
+
+**Reading:** the GO is real and SHARPER than first stated - the soft wall yields a genuine canonical integer index eta_inf = sig(Delta), not fuzz. But that integer is CONNECTION-DEPENDENT; the rep fixes no value. A generation count needs the geometry to supply a CANONICAL grading-breaking connection (a strictly stronger demand on SPEC 5(ii)'s Y14 holonomy), and even then sig(Delta) is an EVEN integer the rep's algebra never honestly pins to 3 (see CONSTRUCT-04).
+
+---
+
+### CONSTRUCT-04 - degree-0 integer-freeness: no honest scale-invariant Dirac integer (the unreachability leg) (2026-06-27)
+
+Because CONSTRUCT-02 softened the eta=0 wall, the program's terminal now rests on a different question: even WITH a revived index, can an honest INTEGER - let alone 3 - be extracted from the existing bridge data without importing it? Computed on the bridge (`tests/step7_integer_freeness.py`), guards held. **Adversarially verified** (workflow, two agents ran independent counter-computations; survives both prongs; no import-target hit on {3,4,8,24} as a derived invariant).
+
+- **PRONG 1 (rank/dimension prime spectrum):** every native Cl(9,5) dimension is {2,7,13}-smooth (128 = 2^7, 14 = 2.7, 1792 = 2^8.7, 1664 = 2^7.13, Spin(9,5) = 91 = 7.13, ...). The prime **3 is ABSENT** from the rep's dimension spectrum, so no REP-NATIVE rank/count equals 3.k. (GU GEOMETRIC quantities can carry 3 - dim SO(3,1) = 6, self-dual 2-forms = 3 - but those are external, not rep dimensions; 3 is exactly what must be imported.)
+- **PRONG 2 (degree-0 ratio sector):** of the xi-independent degree-0 RATIO invariants of {Pi, Q, M_D(xi), Gamma}, every Dirac-content one is a NON-INTEGER algebraic number - a surd/rational over {2,7,13}: C2/bare = sqrt(7), bare/||E|| = sqrt(2), tr(Pi Md M Pi)/tr(M_KT) = 7/2, ... NONE equals an import target. The only integers in the ratio sector are trivial tight-frame 1's.
+- **Scope/honesty (after adversarial counter-computation):** broadening to rank/signature counts DOES yield integers (rank M_D = 1792, npos(Pi M_D Pi) = 832, ...), but those are conjugation-invariant DIMENSION counts with no geometric Dirac content. The ONE genuine degree-0 Dirac-content integer is the metric signature tr(sign(e_a^2)) = 9 - 5 = **4** - flagged as a STRUCTURAL INPUT (the chosen (9,5) signature, the prong-1 analog), not derived, and it is 4 not the target 3. The prime 3 also appears in irrational DENOMINATORS of ratio-squares (sqrt(7/24)); that only makes them more irrational, never an integer.
+
+**Combined verdict:** no honest scale-invariant INTEGER with Dirac content lives in the bridge data. So even CONSTRUCT-03's revived (soft-wall) index cannot by itself deliver "3": any honest 3 must arise as a genuine EXTERNAL topological/families index over the Y14/K3 geometry (carrying the foreign prime 3); producing it from the rep alone is a target import. EVIDENCE, not proof - bounded by this finite low-word-length catalog.
+
+---
+
+### SYNTHESIS (CONSTRUCT-02/03/04) - the program now bottlenecks on ONE external object
+
+The three results converge. CONSTRUCT-02 + 03 show the eta=0 wall is SOFT and the index revives as a canonical integer eta_inf = sig(Delta), but its value is set by the (unbuilt) grading-breaking connection, not the rep. CONSTRUCT-04 shows the rep's own data contains no honest scale-invariant Dirac integer - the count's prime 3 is simply not present. So BOTH the "revive the index" route and the "read off the count" route now point at the SAME single missing object: **SPEC 5(i)+5(ii), a canonical families index / Y14 boundary holonomy over the metric fiber GL(4,R)/O(3,1)**, which must simultaneously (a) supply a canonical grading-breaking connection and (b) carry an external topological integer divisible by 3. Everything internal to the rep is now exhausted; the remaining frontier is entirely this one external geometric construction (consistent with the parent capstone's "needs new physics"). All three landed results survived adversarial counter-computation (high confidence).
