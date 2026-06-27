@@ -1,5 +1,35 @@
 # GU Source Action
 
+## Front-Door Candidate Lens
+
+The most actionable current design lens is:
+
+> **The missing GU source action may be an adversarial security-budget functional over admissible geometric
+> extensions.**
+
+In this reading, a source extension becomes physically admissible only when it increases GU structure while
+paying the cost required to make that extension final against every allowed mathematical fork: rival shiab
+members, rival boundary spectral sections, RS/BRST inconsistency, theta/source-current drift, anomaly failure,
+target import, or acausal decoupling.
+
+Read [`CRYPTOECONOMIC-SOURCE-ACTION.md`](CRYPTOECONOMIC-SOURCE-ACTION.md) before proposing new selectors. It
+turns the idea into a concrete minimax workflow and executable scaffold:
+
+```text
+Score(phi) = GrowthValue(phi)
+             - ValidationCost(phi)
+             - FinalizationCost(phi)
+             - WorstCaseAdversarialLoss(phi)
+```
+
+This is not a result and not a replacement for `SPEC.md`. It is the current best way to make the search
+global, adversarial, and testable instead of repeating local selector dead-ends.
+
+For a divergent idea stress test, see
+[`PERSONA-LENS-VOTE-2026-06-27.md`](PERSONA-LENS-VOTE-2026-06-27.md): 25 independent lenses rank their top
+three workstreams and vote. The current consensus portfolio is GU-native minimax loss channels, a boundary
+finality carrier, and an anti-import adversarial oracle.
+
 > **Working name — pending confirmation before this becomes a public repo.**
 
 **An open theoretical-construction program: build the one object that `gu-formalization` proved is missing.**

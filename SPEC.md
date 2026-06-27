@@ -3,6 +3,28 @@
 The single missing object in Geometric Unity, as pinned by the `gu-formalization` campaign
 (see `../gu-formalization/WHERE-GU-STANDS-AND-THE-MISSING-OBJECT-2026-06-27.md`, Part B).
 
+## Prominent Candidate Lens: Security-Budget Source Action
+
+The current front-door steelman for how to search for `S_IG` is the cryptoeconomic security-budget lens:
+
+```text
+S_IG may be the variational rule that prices admissible source extensions against
+worst-case mathematical forks.
+```
+
+See `CRYPTOECONOMIC-SOURCE-ACTION.md`.
+
+This lens does **not** relax the target below. It only proposes a disciplined form for the missing global
+selector:
+
+```text
+growth of admissible source structure
+- validation/finality cost
+- worst-case adversarial loss
+```
+
+If the lens cannot produce a GU-native carrier for those terms, it is vocabulary and must be killed.
+
 ## The target: the stabilized RS/IG source action `S_IG`
 
 Everything downstream in GU (the shiab selector, the generation count, the dark-energy structure, anomaly

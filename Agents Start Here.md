@@ -5,6 +5,7 @@
 The construction program for GU's missing **RS/IG source action**.
 - Parent (finished audit): `../gu-formalization`.
 - The target: `SPEC.md`.
+- Current front-door candidate lens: `CRYPTOECONOMIC-SOURCE-ACTION.md`.
 - Do-NOT-re-walk list: `DEAD-ENDS.md`.
 - Running ledger: `DERIVATION-PROGRESS.md`.
 
@@ -22,6 +23,24 @@ The construction program for GU's missing **RS/IG source action**.
    - ANTI-FIXED-SOLVE: a carrier must be an **a-priori** geometric object, not solved from the target.
    - ANTI-VACUOUS: nilpotency / closure must be genuine, not trivially-zero on a degenerate complex.
    - ANTI-IMPORT: reaching a number must not smuggle in the matter-generation target.
+
+## Current best candidate lens
+
+Before inventing another local selector, read `CRYPTOECONOMIC-SOURCE-ACTION.md`.
+
+The live steelman is that `S_IG` may be a **security-budget source action**:
+
+```text
+Score(phi)
+  = GrowthValue(phi)
+  - ValidationCost(phi)
+  - FinalizationCost(phi)
+  - WorstCaseAdversarialLoss(phi)
+```
+
+Here the adversary is not a person. It is the space of rival mathematical completions: alternate shiab
+members, boundary sections, RS/BRST closures, theta couplings, index regularizations, target imports, and
+acausal traps. This lens earns attention only if its loss channels are GU-native and computable.
 
 ## The target (SPEC.md, in one breath)
 
