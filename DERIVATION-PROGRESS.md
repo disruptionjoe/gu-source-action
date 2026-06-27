@@ -224,3 +224,20 @@ Capstone of the campaign, triggered by a 113-persona / 10-family Hegelian pass (
 **NEXT (the one and final frontier, unchanged):** the canonical external membrane - can a finality-pinned external structure pin the rank/index to 3 a-priori (not fitted)? This is the literal unbuilt S_IG. The honest prior is still uncertain (the rep gives no preferred rank), but the obstruction is now correctly named as under-determination, which is exactly the gap a source/membrane is meant to fill.
 
 **PROCESS NOTE.** The adversarial-verification discipline worked: a clean-but-false "impossible" was caught pre-commit by an elementary rank-1 counterexample and corrected to a true "reachable but unforced." Recorded as a cautionary instance of full-rank-sampling overgeneralization.
+
+---
+
+### CONSTRUCT-07 - the GU-NATIVE PARITY THEOREM: GU's own building blocks force an EVEN index (2026-06-27)
+
+Strengthening of C-06. C-06 showed an odd index (incl. 3) is reachable by SOME a-priori carrier (a rank-3 kernel projector gives sig=3), so the obstruction is under-determination. This step settles the sharp follow-up: is an odd carrier reachable by GU's OWN building blocks, or only by FOREIGN objects? It upgrades the numerical even-ladder findings (C-03/C-05/C-06) into a closed-form representation-theoretic theorem. (`tests/step11_gu_native_parity_theorem.py`, runs clean, guards held.)
+
+- **(a) Every GU-native PRIMITIVE commutes with J_quat** (H-linearity defect ~1e-11): the Clifford generators e_a (incl. timelike i*G_a), spin generators sigma_ab, vector-index generators M_ij, Pi_RS, Q, M_D.
+- **(b) The generated algebra is closed inside the J_quat-commutant M(14,C) (x) M(64,H)** - exactly the statement Cl(9,5)=M(64,H) (the real Clifford algebra IS the quaternionic-linear algebra). Verified: random real-coefficient products+sums stay H-linear (defect ~1e-10).
+- **(c) KRAMERS:** any Hermitian operator commuting with an antiunitary J (J^2=-1) has even-dimensional eigenspaces, hence EVEN signature. Verified: GU-native carrier signatures all even.
+- **(d) The odd-3 escape is FOREIGN:** the rank-3 random projector is NOT H-linear (defect ~2); the essential scalar-i needed to leave the quaternionic-linear algebra is itself J-ANTILINEAR (defect ~85). Not GU-native -> an import.
+
+**THEOREM (the publishable structural no-go, literal-index reading where count = index):** GU's quaternionic structure forces an EVEN generation index; an ODD count such as 3 cannot arise from GU's own building blocks (the entire real Clifford algebra Cl(9,5)=M(64,H) is quaternionic-linear) - reaching an odd index requires importing a non-quaternionic (non-Clifford) object. This is closed-form representation theory, not sampling: it holds for the whole generated algebra. It is a GU-native parity no-go - the strongest, most defensible claim of the campaign.
+
+**Under the alternative half-index reading** (count = index/2): a GU-native H-linear rank-r carrier gives index 2r, so count = r is reachable incl. 3, but the rank stays FREE - the C-06 under-determination, now pinned to a single free integer rather than a free operator.
+
+**STANDING after C-07.** The honest, defensible result of the whole campaign: (1) GU does not close on its own (parent repo); (2) its generation count is under-determined - neither forced nor forbidden internally (C-06); (3) but GU's quaternionic structure does impose a hard PARITY constraint: GU-native operators give an even index, so under the literal-index reading an odd 3 is structurally impossible without a non-quaternionic import (C-07). The one remaining frontier is unchanged: a canonical external membrane (S_IG) that either pins the free rank (half-index reading) or supplies the non-quaternionic structure (literal-index reading) - a-priori, without import.
