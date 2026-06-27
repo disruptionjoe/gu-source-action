@@ -83,6 +83,36 @@ This does not supersede `SPEC.md`; it sets the next prioritization rule for cons
 
 ---
 
+### LENS-03 - GU-native loss-channel interface (2026-06-27)
+
+Added `lib/loss_channels.py` and `tests/test_loss_channels.py`.
+
+The interface enforces the rule selected by LENS-02: a loss channel must either compute from current
+GU-native objects or fail loudly with a named missing carrier. The first computable channels are:
+
+```text
+L_boundary_symbol  - computes the BV-to-boundary symbol/Hessian carrier.
+L_boundary_index   - computes the eta=0 APS-index obstruction for that carrier.
+L_target_import    - fatal guard for known target imports.
+L_acausal_trap     - fatal guard for bare-commutator/acausal decoupling traps.
+```
+
+The boundary result is intentionally double-edged: the BV-to-boundary-Dirac map exists at the
+symbol/Hessian level, but the APS index route fails because the chiral grading forces eta to zero. So
+`C2` is currently carried as a Hilbert-Schmidt symbol norm, not as a spectral-section index.
+
+Missing-carrier channels now raise `MissingCarrierError` instead of pretending to compute:
+
+```text
+L_anomaly
+L_RS_BRST
+L_theta_source
+L_weak_field
+L_families_pushforward
+```
+
+---
+
 ### CONSTRUCT-01 - first 5 construction steps: the BV-to-boundary-Dirac MAP holds (M_KT = N*D_Sigma^2), but the index half is forced shut (eta=0); a new obstruction-theorem (2026-06-27)
 
 First concrete construction work: 5 SEQUENTIAL steps on workstream A (BV-to-boundary-Dirac = SPEC item 5(iii) = persona-vote #3), each computed on the explicit Cl(9,5) rep via `lib/gu_bridge.py` and adversarially framed. (The orchestration crashed near the end but wrote all 5 step tests; re-run + verified in the main loop. Step 1's heavy 196-pair Gram loop was made exact-but-fast via the Frobenius inner product.) Genuine mixed result: half built, half forced shut, plus a sharp new theorem. Guards held throughout (bare commutator 58.72 untouched; no target import).
@@ -99,3 +129,21 @@ First concrete construction work: 5 SEQUENTIAL steps on workstream A (BV-to-boun
 **NEW OBSTRUCTION-THEOREM (the genuine product).** Any boundary Dirac whose square is the (positive) Koszul-Tate Hessian inherits an anticommuting chiral grading, hence eta = 0, so C2 can NEVER be its APS index. This independently re-derives the parent's "C2 is not an index" BY CONSTRUCTION and with the MECHANISM, and converts SPEC 5(iii) from open to a precise theorem-shaped wall.
 
 **NEXT:** break the grading - a curvature/connection term that fails to anticommute with G, or a non-self-adjoint / non-chiral boundary operator - OR abandon the index reading and pursue C2 as a genuine first-order SYMBOL invariant (its natural home per steps 1+4). The latter is workstream A converging toward C (the boundary-symbol carrier), consistent with the persona vote.
+
+---
+
+### CONSTRUCT-02 - the grading-break DECISION: eta=0 is NOT symmetry-protected; CONSTRUCT-01's wall is SOFT (GO) (2026-06-27)
+
+The decisive go/no-go from the 7-lens synthesis (the single crux five lenses converged on): is CONSTRUCT-01's eta=0 a one-operator accident or symmetry-protected over the whole admissible class? Computed on the explicit Cl(9,5) rep via `lib/gu_bridge.py` (`tests/step6_grading_break_decision.py`, runs clean, all guards + symmetry assertions pass, deterministic seed). Guards held throughout (bare commutator 58.72 untouched - every perturbation is added to the boundary operator D_Sigma, M_D is never modified; all breakers a-priori; no target import).
+
+**(A) Altland-Zirnbauer class of D_Sigma = CII (all exact).** Built the COMMUTING quaternionic structure J of M(64,H) (J antiunitary, J^2=-1, H-linear: max_a ||U conj(e_a) - e_a U|| = 4.8e-12) as the +1 eigenoperator of the Clifford-averaging superoperator. Lifting J_full = id_14 (x) J gives three exact symmetries of D_Sigma: T = J_full (TRS, T^2 = -1, [T,D] = 1.2e-11), S = G (chiral, {G,D} = 5.5e-14), C = J_full . G (PHS, C^2 = -1, {C,D} = 1.2e-11). So D_Sigma sits in class **CII**. The genuine product: it is the **particle-hole symmetry C (C^2 = -1), not the chiral grading alone, that FORCES eta = 0** - C pairs every +lambda with a -lambda. (T^2 = -1 only forces Kramers DOUBLING; every eigenvalue in this run is exactly doubly degenerate.)
+
+**(B) THE DECISION (GO).** A grading-breaking perturbation is a G-DIAGONAL (G-commuting) Hermitian term Delta; the guard-admissible class is {a-priori, H-linear ([J_full, Delta]=0), non-equivariant, anti-trap}. Tested eta(D_Sigma + t*Delta) over t in [0,2]:
+- the NATURAL breaker Delta_nat = the G-diagonal Hermitian part of M_D itself keeps **eta = 0 for ALL t** - it pushes the spectrum symmetrically AWAY from zero (nearest |lambda| ~ 6 at t=1); it is the special, non-generic case;
+- GENERIC admissible breakers carry **genuine spectral flow eta = +/-4** - a fine t-scan shows a Kramers pair of eigenvalues crossing zero (e.g. -0.00055 -> +0.00033 at t~0.65) and crossing back (t~1.15), with a clean gap from the rest of the spectrum (real flow, not tol noise). eta is even throughout (quaternionic Kramers), as required.
+
+**NEW THEOREM-SOFTENING (the genuine product).** eta = 0 is **NOT symmetry-protected**: it is forced only by the C-PHS of the BARE chiral D_Sigma, and that PHS is broken ({C, Delta} != 0) by any guard-admissible grading-breaking term lying OUTSIDE the M_D-symmetric family. So CONSTRUCT-01's "theorem-shaped wall" is **SOFT**: the index route is revived (as a spectral-flow / odd K^1 invariant, consistent with the surviving NCG proposal) the moment such a connection is supplied. This pins the entire remaining index question to ONE well-posed object: which a-priori grading-breaking connection the real **Y14 boundary holonomy (SPEC 5(ii))** supplies. GO converts the open construction of the index into a constrained, finite search instead of open invention.
+
+**HARD BAR UNCHANGED.** Reviving the index does NOT produce a generation count: ch2(S_X)[K3] = -5376 (not 24) still stands, and the spectral flow is in the auxiliary strength t, not yet a geometric parameter (so eta is a Kramers-even / 4Z spectral-flow quantity, not yet a free integer). GO means the remaining index question is well-posed and the wall is soft - NOT "three generations."
+
+**NEXT:** (1) replace the auxiliary t by the actual a-priori Y14 boundary connection (SPEC 5(ii)) and ask whether the geometry selects a breaker in the flowing class or the M_D-symmetric (eta=0) one - this is now the single decisive object. (2) Characterize the revived invariant properly (Kramers-even spectral flow / mod-2 vs free integer) before any count is read - feeds Tier-1 move 2 (degree-0 ratio-sector integer-freeness). (3) The hard bar -5376 is the independent second gate and is untouched by this result.

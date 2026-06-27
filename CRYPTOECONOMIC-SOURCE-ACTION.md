@@ -10,7 +10,9 @@ depends_on:
   - ../gu-formalization/explorations/time-as-finality-crosswalk/ti-as-gu-source-action-v2-wolfram-signed-readout-steelman-2026-06-27.md
 optional_executable:
   - lib/security_budget.py
+  - lib/loss_channels.py
   - tests/test_security_budget.py
+  - tests/test_loss_channels.py
 ---
 
 # Cryptoeconomic Security-Budget Source Action
@@ -147,6 +149,10 @@ L_acausal_trap(phi)
 
 Every stub must say what exact parent-repo object would compute it.
 
+The current executable boundary between real channels and missing carriers is
+`lib/loss_channels.py`: channels either compute from `lib/gu_bridge.py` or raise a named
+`MissingCarrierError`.
+
 ### Step 3: Run A Minimax Selector
 
 Use `lib/security_budget.py`:
@@ -193,4 +199,3 @@ cryptoeconomic finality, or lacks a GU-native carrier.
 This is the most promising nonlocal design lens for the source action, but it is still only a
 design lens. The missing physics remains the same: a real BV source action, a BV-to-boundary-Dirac
 map, and a GU-native global carrier for the score.
-
