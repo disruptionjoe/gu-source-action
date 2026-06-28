@@ -10,6 +10,13 @@
 > forward-looking construction scaffolding (the cryptoeconomic membrane lens, the persona vote, the loss
 > channels), not audited results. See `DERIVATION-PROGRESS.md` for the full CONSTRUCT-01..07 record.
 
+> **STATUS (2026-06-28): this sandbox is now the test bench for falsification criterion 1 of the
+> Firewall-Boundary Hypothesis** (`../gu-formalization/canon/firewall-boundary-hypothesis.md`, the
+> repository's primary research question). Building a CLOSED internal source action here is the live
+> attempt to KILL that hypothesis: if a closed completion can be constructed without contradiction or
+> import, the firewall reading weakens; if every serious attempt instead fails in the same
+> boundary-shaped way, it strengthens. Build to disprove the firewall, not to confirm it.
+
 ## Front-Door Candidate Lens
 
 The most actionable current design lens is:
