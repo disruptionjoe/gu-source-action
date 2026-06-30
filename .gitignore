@@ -4,3 +4,4 @@ __pycache__/
 *.pdf
 .lake/
 .DS_Store
+_local/
